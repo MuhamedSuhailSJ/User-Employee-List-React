@@ -90,9 +90,9 @@ const Home = () => {
     </UserCardContainers>
   );
 
-  const Loader = () => (
+  const Loader = (theme) => (
     <div>
-      <LoaderDiv>
+      <LoaderDiv themecolor={theme}>
         <PuffLoader />
       </LoaderDiv>
     </div>
@@ -140,7 +140,7 @@ const Home = () => {
                 />
               </SearchContainer>
             </Navbar>
-            {loading ? Loader() : listItem(theme)}
+            {loading ? Loader(theme) : listItem(theme)}
           </>
         );
       }}

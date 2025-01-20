@@ -27,7 +27,7 @@ export const UserDetailCard = styled.div`
   background-color: ${(props) => (props.themecolor ? "white" : "#141517")};
   color: ${(props) => (props.themecolor ? "black" : "white")};
   border-radius: 4px;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 80%;
   height: 90vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,

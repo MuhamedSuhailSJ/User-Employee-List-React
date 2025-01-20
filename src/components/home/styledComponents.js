@@ -34,6 +34,10 @@ export const ThemeButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+export const UserCardContainers = styled.div`
+  background-color: ${(props) => (props.themecolor ? "white" : "#232429")};
+  min-height: 100vh;
+`;
 
 export const LoaderDiv = styled.div`
   margin-top: 80px;
@@ -43,10 +47,6 @@ export const LoaderDiv = styled.div`
   align-items: center;
 `;
 
-export const UserCardContainers = styled.div`
-  background-color: ${(props) => (props.themecolor ? "white" : "#232429")};
-  min-height:100vh;
-`;
 
 export const UserCardContainer = styled.ul`
   margin-top: 90px;
