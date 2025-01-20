@@ -11,7 +11,7 @@ import { MdDarkMode } from "react-icons/md";
 import {
   Navbar,
   SearchContainer,
-  LoaderDiv,
+  LoaderDiv,UserCardContainers,
   UserCardContainer,
   UserCard,
   UserDetil,
@@ -65,15 +65,16 @@ const Home = () => {
       : -1;
   });
 
-  const listItem = () => (
-    <div>
+  const listItem = (theme) => (
+    <UserCardContainers themeColor={theme}>
       <UserCardContainer>
         {sortedUser.map((Items) => (
           <UserCard
+            themeColor={theme}
             key={Items.id}
             onClick={() => navigate(`/user/${Items.id}`)}
           >
-            <UserDetil className="UserDetil">
+            <UserDetil themeColor={theme}>
               <h1>{Items.name}</h1>
               <p>{Items.email}</p>
               <p>{Items.address.city}</p>
@@ -86,7 +87,7 @@ const Home = () => {
           </UserCard>
         ))}
       </UserCardContainer>
-    </div>
+    </UserCardContainers>
   );
 
   const Loader = () => (
@@ -133,7 +134,6 @@ const Home = () => {
                 <TextFieldInput
                   onChange={searchUser}
                   id="filled-size-small"
-                  className="box"
                   label="Search"
                   type="search"
                   size="small"
@@ -141,7 +141,7 @@ const Home = () => {
                 />
               </SearchContainer>
             </Navbar>
-            {loading ? Loader() : listItem()}
+            {loading ? Loader() : listItem(theme)}
           </>
         );
       }}

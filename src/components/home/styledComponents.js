@@ -15,11 +15,18 @@ export const Navbar = styled.div`
   height: 15vh;
   background-color: rgb(247, 225, 58);
   padding: 20px;
+  @media (max-width: 768px) {
+    height: 10vh;
+    font-size:10px;
+  }
 `;
 
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    height: 10px;
+  }
 `;
 
 export const ThemeButton = styled.button`
@@ -36,6 +43,10 @@ export const LoaderDiv = styled.div`
   align-items: center;
 `;
 
+export const UserCardContainers = styled.div`
+  background-color: ${(props) => (props.themeColor ? "white" : "#232429")};
+`;
+
 export const UserCardContainer = styled.ul`
   margin-top: 90px;
   display: flex;
@@ -49,17 +60,26 @@ export const UserCard = styled.li`
   display: flex;
   justify-content: space-around;
   width: 400px;
-  border: 2px solid rgb(169, 20, 228);
+  border: 2px solid;
   border-radius: 8px;
   min-height: 190px;
   max-height: 200px;
   font-size: 10px;
   text-decoration: none;
-  color: black;
+  background-color: ${(props) => (props.themeColor ? "white" : "#2B2B35")};
+  border-color: ${(props) => (props.themeColor ? "white" : "#2B2B35")};
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @media (max-width: 768px) {
+    width: 330px;
+  }
 `;
 
 export const UserDetil = styled.div`
+  color: ${(props) => (props.themeColor ? "black" : "white")};
   width: 220px;
+  @media (max-width: 768px) {
+    width: 180px;
+  }
 `;
 
 export const UserImage = styled.img`
@@ -67,6 +87,10 @@ export const UserImage = styled.img`
   height: 150px;
   align-self: center;
   border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+  }
 `;
 
 export const Sorter = styled(Select)`
@@ -76,6 +100,10 @@ export const Sorter = styled(Select)`
 export const FaSearchIcon = styled(FaSearch)`
   width: 40px;
   height: 25px;
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 15px;
+  }
 `;
 
 export const TextFieldInput = styled(TextField)`
@@ -83,4 +111,9 @@ export const TextFieldInput = styled(TextField)`
   padding: 0px;
   width: 300px;
   align-self: center;
+  @media(max-width:768px){
+  width:80px;
+  height:20px;
+  bottom:30px;
+  }
 `;

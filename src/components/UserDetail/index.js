@@ -43,8 +43,8 @@ const UserDetail = () => {
     </div>
   );
 
-  const userDetailContainer = () => (
-    <UserDetailCard>
+  const userDetailContainer = (theme) => (
+    <UserDetailCard themeColor={theme}>
       <UserDeatilHead>
         <Userimg
           src="https://res.cloudinary.com/dzipdro4d/image/upload/v1737264005/bbf75727-8bd2-47ae-bcfe-cec0b1ec26a7.png"
@@ -86,8 +86,8 @@ const UserDetail = () => {
         const { theme } = value;
         console.log(theme);
         return (
-          <UserDeatilbg>
-            {loading ? Loader() : userDetailContainer()}
+          <UserDeatilbg themeColor={theme}>
+            {loading ? Loader() : userDetailContainer(theme)}
           </UserDeatilbg>
         );
       }}
