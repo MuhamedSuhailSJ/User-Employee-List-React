@@ -45,6 +45,7 @@ export const LoaderDiv = styled.div`
 
 export const UserCardContainers = styled.div`
   background-color: ${(props) => (props.themecolor ? "white" : "#232429")};
+  min-height:100vh;
 `;
 
 export const UserCardContainer = styled.ul`
