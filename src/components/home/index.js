@@ -110,7 +110,7 @@ const Home = () => {
               <h1>User Connect</h1>
               <SearchContainer>
                 <ThemeButton onClick={OnChangeTheme}>
-                  {theme ? <MdLightMode /> : <MdDarkMode />}
+                  {theme ?  <MdDarkMode />:<MdLightMode />}
                 </ThemeButton>
                 <div>
                   <FormControl fullWidth>
