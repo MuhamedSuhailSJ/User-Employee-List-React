@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
+import ThemeContext from "../../context/themeContext";
 import PuffLoader from "react-spinners/PuffLoader";
 import { useParams } from "react-router-dom";
-import "./index.css";
+
+import {
+  UserDeatilbg,
+  Userimg,
+  UserDetailCard,
+  UserDeatilHead,
+} from "./styledComponents";
 
 const UserDetail = () => {
   let { id } = useParams();
@@ -37,19 +44,18 @@ const UserDetail = () => {
   );
 
   const userDetailContainer = () => (
-    <div className="UserDetailCard">
-      <div className="UserDeatilHead">
-        <img
+    <UserDetailCard>
+      <UserDeatilHead>
+        <Userimg
           src="https://res.cloudinary.com/dzipdro4d/image/upload/v1737264005/bbf75727-8bd2-47ae-bcfe-cec0b1ec26a7.png"
           alt="User"
-          className="Userimg"
         />
         <div>
           <h1>{userData.name}</h1>
           <p>Username: {userData.username}</p>
           <p>Email: {userData.email}</p>
         </div>
-      </div>
+      </UserDeatilHead>
       <div>
         <p>Address:</p>
         <div>
@@ -71,13 +77,21 @@ const UserDetail = () => {
           <p>bs: {bs}</p>
         </div>
       </div>
-    </div>
+    </UserDetailCard>
   );
 
   return (
-    <div className="userDeatilbg">
-      {loading ? Loader() : userDetailContainer()}
-    </div>
+    <ThemeContext.Consumer>
+      {(value) => {
+        const { theme } = value;
+        console.log(theme);
+        return (
+          <UserDeatilbg>
+            {loading ? Loader() : userDetailContainer()}
+          </UserDeatilbg>
+        );
+      }}
+    </ThemeContext.Consumer>
   );
 };
 
