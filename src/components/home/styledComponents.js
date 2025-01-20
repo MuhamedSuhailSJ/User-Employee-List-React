@@ -44,7 +44,7 @@ export const LoaderDiv = styled.div`
 `;
 
 export const UserCardContainers = styled.div`
-  background-color: ${(props) => (props.themeColor ? "white" : "#232429")};
+  background-color: ${(props) => (props.themecolor ? "white" : "#232429")};
 `;
 
 export const UserCardContainer = styled.ul`
@@ -66,8 +66,8 @@ export const UserCard = styled.li`
   max-height: 200px;
   font-size: 10px;
   text-decoration: none;
-  background-color: ${(props) => (props.themeColor ? "white" : "#2B2B35")};
-  border-color: ${(props) => (props.themeColor ? "white" : "#2B2B35")};
+  background-color: ${(props) => (props.themecolor ? "white" : "#2B2B35")};
+  border-color: ${(props) => (props.themecolor ? "white" : "#2B2B35")};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   @media (max-width: 768px) {
     width: 330px;
@@ -75,7 +75,7 @@ export const UserCard = styled.li`
 `;
 
 export const UserDetil = styled.div`
-  color: ${(props) => (props.themeColor ? "black" : "white")};
+  color: ${(props) => (props.themecolor ? "black" : "white")};
   width: 220px;
   @media (max-width: 768px) {
     width: 180px;

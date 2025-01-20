@@ -66,15 +66,15 @@ const Home = () => {
   });
 
   const listItem = (theme) => (
-    <UserCardContainers themeColor={theme}>
+    <UserCardContainers themecolor={theme}>
       <UserCardContainer>
         {sortedUser.map((Items) => (
           <UserCard
-            themeColor={theme}
+            themecolor={theme}
             key={Items.id}
             onClick={() => navigate(`/user/${Items.id}`)}
           >
-            <UserDetil themeColor={theme}>
+            <UserDetil themecolor={theme}>
               <h1>{Items.name}</h1>
               <p>{Items.email}</p>
               <p>{Items.address.city}</p>
@@ -101,7 +101,6 @@ const Home = () => {
     <ThemeContext.Consumer>
       {(value) => {
         const { theme, changeTheme } = value;
-        console.log(theme);
         const OnChangeTheme = () => {
           changeTheme();
         };

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ThemeContext from "../../context/themeContext";
 import PuffLoader from "react-spinners/PuffLoader";
 import { useParams } from "react-router-dom";
@@ -8,13 +9,15 @@ import {
   Userimg,
   UserDetailCard,
   UserDeatilHead,
+  IoArrowBackSharpIcon,
+  BackButton,
 } from "./styledComponents";
 
 const UserDetail = () => {
-  let { id } = useParams();
-  let [userData, setuserData] = useState("");
-  let [loading, setLoading] = useState(true);
-  console.log(id);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [userData, setuserData] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -44,7 +47,10 @@ const UserDetail = () => {
   );
 
   const userDetailContainer = (theme) => (
-    <UserDetailCard themeColor={theme}>
+    <UserDetailCard themecolor={theme}>
+      <BackButton themecolor={theme} onClick={() => navigate("/")}>
+        <IoArrowBackSharpIcon themecolor={theme} />
+      </BackButton>
       <UserDeatilHead>
         <Userimg
           src="https://res.cloudinary.com/dzipdro4d/image/upload/v1737264005/bbf75727-8bd2-47ae-bcfe-cec0b1ec26a7.png"
@@ -84,9 +90,8 @@ const UserDetail = () => {
     <ThemeContext.Consumer>
       {(value) => {
         const { theme } = value;
-        console.log(theme);
         return (
-          <UserDeatilbg themeColor={theme}>
+          <UserDeatilbg themecolor={theme}>
             {loading ? Loader() : userDetailContainer(theme)}
           </UserDeatilbg>
         );
