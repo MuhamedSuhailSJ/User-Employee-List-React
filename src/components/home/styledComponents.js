@@ -58,7 +58,9 @@ export const UserCardContainer = styled.ul`
 
 export const UserCard = styled.li`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  padding:0;
   width: 400px;
   border: 2px solid;
   border-radius: 8px;
@@ -75,17 +77,20 @@ export const UserCard = styled.li`
 `;
 
 export const UserDetil = styled.div`
+  margin: 0;
+  padding: 0;
   color: ${(props) => (props.themecolor ? "black" : "white")};
   width: 220px;
+  height:150px;
   @media (max-width: 768px) {
-    width: 180px;
+  height:130px; 
+    width: 170px;
   }
 `;
 
 export const UserImage = styled.img`
   width: 150px;
   height: 150px;
-  align-self: center;
   border-radius: 10px;
   @media (max-width: 768px) {
     width: 130px;
@@ -111,9 +116,9 @@ export const TextFieldInput = styled(TextField)`
   padding: 0px;
   width: 300px;
   align-self: center;
-  @media(max-width:768px){
-  width:80px;
-  height:20px;
-  bottom:30px;
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 20px;
+    bottom: 30px;
   }
 `;
