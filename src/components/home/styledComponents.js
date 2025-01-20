@@ -13,11 +13,11 @@ export const Navbar = styled.div`
   position: fixed;
   width: 100%;
   height: 15vh;
-  background-color: rgb(247, 225, 58);
+  background-color: #ffcc00;
   padding: 20px;
   @media (max-width: 768px) {
     height: 10vh;
-    font-size:10px;
+    font-size: 10px;
   }
 `;
 
